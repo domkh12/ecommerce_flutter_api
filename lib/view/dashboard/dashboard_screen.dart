@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
 import 'package:get/get.dart';
 import 'package:my_app_ecommerce/controller/dashboard_controller.dart';
+import 'package:my_app_ecommerce/view/account/account_screen.dart';
+import 'package:my_app_ecommerce/view/category/category_screen.dart';
 import 'package:my_app_ecommerce/view/home/home_screen.dart';
+import 'package:my_app_ecommerce/view/product/product_screen.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen ({super.key});
@@ -11,20 +14,15 @@ class DashboardScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<DashboardController>(
       builder:  (controller) => Scaffold(
+        backgroundColor: Colors.grey.shade100,
         body: SafeArea(
           child: IndexedStack(
             index: controller.tapIndex,
-            children: [
-              const HomeScreen(),
-              Container(
-                color: Colors.red,
-              ),
-              Container(
-                color: Colors.green,
-              ),
-              Container(
-                color: Colors.blue,
-              )
+            children: const [
+              HomeScreen(),
+              ProductScreen(),
+              CategoryScreen(),
+              AccountScreen()
             ],
           ),
         ),

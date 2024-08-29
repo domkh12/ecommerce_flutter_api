@@ -1,1 +1,1 @@
-String baseUrl = 'http://192.168.71.122:1337';
+String baseUrl = 'https://bright-laughter-8be7db59dd.strapiapp.com';
